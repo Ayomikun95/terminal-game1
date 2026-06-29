@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Terminal Simulation Game</title>
+<style>
+    body {
+        background-color: black;
+        color: #00ff00;
+        font-family: monospace;
+        padding: 20px;
+    }
+    .box {
+        border: 1px solid #00ff00;
+        padding: 15px;
+        max-width: 800px;
+        margin: auto;
+    }
+    .title {
+        color: white;
+        margin-bottom: 10px;
+    }
+    .warning {
+        color: yellow;
+        margin-bottom: 20px;
+    }
+    #output {
+        white-space: pre-line;
+        line-height: 1.5;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <div class="title">SECURE TERMINAL SIMULATION</div>
+    <div class="warning">This is a harmless educational game. No real systems are accessed.</div>
+
+    <div id="output"></div>
+</div>
+
+<script>
+const lines = [
+"Initializing secure connection...",
+"Bypassing firewall... [SIMULATION]",
+"Accessing remote node... [SIMULATION]",
+"Decrypting packets... [SIMULATION]",
+"",
+"ERROR: This is not a real hack.",
+"",
+"Welcome, operator.",
+"",
+"MISSION: Solve the puzzle below",
+"--------------------------------",
+"What does CIA stand for in cybersecurity?",
+"",
+"Hint: Think confidentiality, integrity, availability",
+"",
+"Type your answer in the console (pretend mode :)"
+];
+
+let i = 0;
+const output = document.getElementById("output");
+
+function typeLine() {
+    if (i < lines.length) {
+        output.innerHTML += lines[i] + "\n";
+        i++;
+        setTimeout(typeLine, 600);
+    }
+}
+
+typeLine();
+</script>
+
+</body>
+</html>
